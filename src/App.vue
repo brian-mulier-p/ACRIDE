@@ -1,26 +1,56 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <main>
+    <div id="project-explorer">
+      <ProjectExplorer/>
+    </div>
+    <div id="text-editor">
+      <Editor/>
+    </div>
+  </main>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ProjectExplorer from './components/project/ProjectExplorer.vue'
+import Editor from './components/editor/EditorWindow.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ProjectExplorer,
+    Editor
+  },
+  data() {
+    return {
+      textContent: ''
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  margin: 0;
+}
+
+main {
+  background-color: dimgrey;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+#project-explorer {
+  flex-grow: 1;
+  height: auto;
+  display: inline-block;
+  padding: 2px;
+  background: lightgrey;
+  border-right: 3px solid black;
+}
+
+#text-editor {
+  flex-grow: 4;
+  height: 100%;
+  display: inline-block;
 }
 </style>

@@ -1,4 +1,4 @@
-# ride
+# Actually Cool Remote IDE
 
 ## Project setup
 ```
